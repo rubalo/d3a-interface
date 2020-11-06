@@ -104,7 +104,7 @@ def unix_time_to_str(unix_time, out_format):
     return from_timestamp(unix_time).format(out_format)
 
 
-@lru_cache(maxsize=100, typed=False)
+@lru_cache(maxsize=None, typed=False)
 def format_datetime(datetime, ui_format=False, unix_time=False):
     if unix_time:
         return datetime.timestamp()
